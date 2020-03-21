@@ -49,7 +49,23 @@ docker-compose exec maxscale maxctrl list servers
 
 
 
-## 
+## To databases exis on maxscale/sql directory, you can execute:
+mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases" 
+
+# It give you out results :
++--------------------+
+| Database |
++--------------------+
+| information_schema |
+| performance_schema |
+| mysql |
+| test |
+| zipcodes_two |
++--------------------+
+
+## To access a master shard database from zipcode one:
+
+
 
 ## To access a master shard database from zipcode two:
    
