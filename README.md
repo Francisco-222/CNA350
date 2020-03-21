@@ -44,6 +44,8 @@ docker-compose exec maxscale maxctrl list servers
 │ Shard-B │ 127.0.0.1 │ 4007 │ 0           │ Running         │           │
 └─────────┴───────────┴──────┴─────────────┴─────────────────┴───────────┘
 
+
+
 ## 
 
 ## To access a master shard database from zipcode two:
