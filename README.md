@@ -96,8 +96,14 @@ sam@ubuntu:~/CNA350/maxscale$ mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e 
 
 
 ## Final Step
+```
+
 Once complete, to remove the cluster and maxscale containers:
+
+```
 docker-compose down -v
+```
+
 
 
 
