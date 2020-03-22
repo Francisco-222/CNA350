@@ -2,9 +2,10 @@
 
 Frist Step you have  install commands at VM :
 ```
-sudo apt install docker
-sudo apt install docker-compose
-sudo apt install mariadb-server
+$ sudo apt install docker
+$ sudo apt install docker-compose
+$ sudo apt install mariadb-server
+$ sudo apt install mariadb-client-core-10.1
 ```
 
 
@@ -38,19 +39,24 @@ it will You should see 4 containers start up
 ```
 ## Second Step
 
-Moddify docker-compose.yml and other files to suport PHPMyadmin and move the architecture from master-slave to shardded by modifying the .yml and maxscale.cnf files.
-
-```
-$ nano docker-compose.yml to add or change
-
-```
-
 ## Docker-compose setup and = maxscale docker images and verify 
 
 ```
 $ docker-compose up -d
 ```
 
+## MaxScale docker-compose setup Moddify docker-compose.yml 
+Moddify docker-compose.yml and other files to suport PHPMyadmin and move the architecture from master-slave to shardded by modifying the .yml and maxscale.cnf files.
+
+[The MaxScale docker-compose setup](./docker-compose.yml) contains MaxScale
+configured with a three node master-slave cluster and . To start it, run the
+following commands in this directory.
+
+```
+$ docker-compose build
+$ docker-compose up -d
+$ nano docker-compose.yml to add or change
+```
 
 ## to Log into Phpmyadmin (127.0.0.1:8080) sever = maxscale , using
 maxuser: pwd = maxpwd
@@ -109,7 +115,8 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 
 
 ## To access a master shard database from zipcode one:
-   mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_one.zipcodes_one LIMIT 7;"
+   $ mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_one.zipcodes_one LIMIT 7;"
+   
    #  Out results 
   ```
    
@@ -131,7 +138,7 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 
 ## To access a master shard database from zipcode two:
    
- mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_two.zipcodes_two LIMIT 7;"
+$ mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_two.zipcodes_two LIMIT 7;"
  
  
 
