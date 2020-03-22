@@ -58,6 +58,7 @@ maxuser: pwd = maxpwd
 To run maxctrl in the container to see the status of the cluster:
 
 ```
+```
 $ docker-compose exec maxscale maxctrl list servers
 
 
