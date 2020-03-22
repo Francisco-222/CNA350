@@ -47,6 +47,34 @@ docker-compose exec maxscale maxctrl list servers
 │ Shard-B │ 127.0.0.1 │ 4007 │ 0           │ Running         │           │
 └─────────┴───────────┴──────┴─────────────┴─────────────────┴───────────┘
 
+MySQL [test]>
+```
+You can edit the [`maxscale.cnf.d/example.cnf`](./maxscale.cnf.d/example.cnf)
+file and recreate the MaxScale container to change the configuration.
+
+To stop the containers, execute the following command. Optionally, use the -v
+flag to also remove the volumes.
+
+To run maxctrl in the container to see the status of the cluster:
+```
+$ docker-compose exec maxscale maxctrl list servers
+┌─────────┬─────────┬──────┬─────────────┬─────────────────┬──────────┐
+│ Server  │ Address │ Port │ Connections │ State           │ GTID     │
+├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
+│ server1 │ master  │ 3306 │ 0           │ Master, Running │ 0-3000-5 │
+├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
+│ server2 │ slave1  │ 3306 │ 0           │ Slave, Running  │ 0-3000-5 │
+├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
+│ server3 │ slave2  │ 3306 │ 0           │ Running         │ 0-3000-5 │
+└─────────┴─────────┴──────┴─────────────┴─────────────────┴──────────┘
+
+```
+
+The cluster is configured to utilize automatic failover. To illustrate this you can stop the master
+container and watch for maxscale to failover to one of the original slaves and then show it rejoining
+after recovery:
+```
+
 
 
 ## To databases exis on maxscale/sql directory, you can execute:
