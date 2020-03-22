@@ -64,8 +64,18 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 +--------------------+
 
 ## To access a master shard database from zipcode one:
-
-
+  sam@ubuntu:~/CNA350/maxscale$ mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_one.zipcodes_one LIMIT 7;"
++---------+-------------+----------+-------+--------------+-----------+------------+-------------------+---------------+-----------------+---------------------+------------+
+| Zipcode | ZipCodeType | City | State | LocationType | Coord_Lat | Coord_Long | Location | Decommisioned | TaxReturnsFiled | EstimatedPopulation | TotalWages |
++---------+-------------+----------+-------+--------------+-----------+------------+-------------------+---------------+-----------------+---------------------+------------+
+| 705 | STANDARD | AIBONITO | PR | PRIMARY | 18.14 | -66.26 | NA-US-PR-AIBONITO | FALSE | | | |
+| 610 | STANDARD | ANASCO | PR | PRIMARY | 18.28 | -67.14 | NA-US-PR-ANASCO | FALSE | | | |
+| 611 | PO BOX | ANGELES | PR | PRIMARY | 18.28 | -66.79 | NA-US-PR-ANGELES | FALSE | | | |
+| 612 | STANDARD | ARECIBO | PR | PRIMARY | 18.45 | -66.73 | NA-US-PR-ARECIBO | FALSE | | | |
+| 601 | STANDARD | ADJUNTAS | PR | PRIMARY | 18.16 | -66.72 | NA-US-PR-ADJUNTAS | FALSE | | | |
+| 631 | PO BOX | CASTANER | PR | PRIMARY | 18.19 | -66.82 | NA-US-PR-CASTANER | FALSE | | | |
+| 602 | STANDARD | AGUADA | PR | PRIMARY | 18.38 | -67.18 | NA-US-PR-AGUADA | FALSE | | | |
++---------+-------------+----------+-------+--------------+-----------+------------+-------------------+---------------+-----------------+---------------------+------------+
 
 ## To access a master shard database from zipcode two:
    
