@@ -46,7 +46,7 @@ $ docker-compose up -d
 ```
 
 ## MaxScale docker-compose setup Moddify docker-compose.yml 
-Moddify docker-compose.yml and other files to suport PHPMyadmin and move the architecture from master-slave to shardded by modifying the .yml and maxscale.cnf files.
+ Moddify docker-compose.yml and other files to suport PHPMyadmin and move the architecture from master-slave to shardded by modifying the .yml and maxscale.cnf files.
 
 [The MaxScale docker-compose setup](./docker-compose.yml) contains MaxScale
 configured with a three node master-slave cluster and . To start it, run the
@@ -58,8 +58,9 @@ $ docker-compose up -d
 $ nano docker-compose.yml to add or change
 ```
 
-## to Log into Phpmyadmin (127.0.0.1:8080) sever = maxscale , using
-maxuser: pwd = maxpwd
+## Configuration
+The default configuration for the container is fairly minimalist and can be found in [this configuration file](./maxscale.cnf). At a high level the following is enabled:
+- REST API with default server(maxscale) user and password ( maxscale / maxpwd) listening to all hosts (127.0.0.1:8080) 
 
 ## Check MaxScale server
 
