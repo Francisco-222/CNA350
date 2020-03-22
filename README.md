@@ -10,12 +10,17 @@ sudo apt install mariadb-server
 
 
 ## Fork maxscale repository: 
-# $ git clone https://github.com/gustanik/CNA350
-
+```
+ $ git clone https://github.com/gustanik/CNA350
+```
 ## Make git the right directory
+```
 $ Cd CNA350 cd maxscale
+```
+
 ## Building
 
+```
 Run the following command in this directory to build the image.
 
 ```
@@ -39,7 +44,9 @@ $ nano docker-compose.yml to add or change
 
 ```
 ## Docker-compose setup and = maxscale docker images and verify 
+```
 docker-compose up -d
+```
 
 ## to Log into Phpmyadmin (127.0.0.1:8080) sever = maxscale , using
 maxuser: pwd = maxpwd
