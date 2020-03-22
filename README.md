@@ -29,7 +29,9 @@ docker-compose up -d
 ## to Log into Phpmyadmin (127.0.0.1:8080) sever = maxscale , using
 maxuser: pwd = maxpwd
 
-o run maxctrl in the container to see the status of the cluster:
+## Check MaxScale server
+
+To run maxctrl in the container to see the status of the cluster:
 ```
 $ docker-compose exec maxscale maxctrl list servers
 
@@ -59,6 +61,8 @@ $ docker-compose exec maxscale maxctrl list servers
 mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases" 
 
 # It give you out results :
+
+```
 +--------------------+
 | Database |
 +--------------------+
@@ -68,6 +72,9 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 | test |
 | zipcodes_two |
 +--------------------+
+
+```
+
 
 ## To access a master shard database from zipcode one:
    mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_one.zipcodes_one LIMIT 7;"
