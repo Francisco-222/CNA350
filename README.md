@@ -47,8 +47,9 @@ $ nano docker-compose.yml to add or change
 
 ## Docker-compose setup and = maxscale docker images and verify 
 
+```
 $ docker-compose up -d
-
+```
 
 
 ## to Log into Phpmyadmin (127.0.0.1:8080) sever = maxscale , using
