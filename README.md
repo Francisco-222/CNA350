@@ -7,20 +7,6 @@ sudo apt install docker-compose
 sudo apt install mariadb-server
 ```
 
-To run maxctrl in the container to see the status of the cluster:
-```
-$ docker-compose exec maxscale maxctrl list servers
-┌─────────┬─────────┬──────┬─────────────┬─────────────────┬──────────┐
-│ Server  │ Address │ Port │ Connections │ State           │ GTID     │
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
-│ server1 │ master  │ 3306 │ 0           │ Master, Running │ 0-3000-5 │
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
-│ server2 │ slave1  │ 3306 │ 0           │ Slave, Running  │ 0-3000-5 │
-├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
-│ server3 │ slave2  │ 3306 │ 0           │ Running         │ 0-3000-5 │
-└─────────┴─────────┴──────┴─────────────┴─────────────────┴──────────┘
-
-```
 
 
 ## Fork maxscale repository: 
@@ -43,8 +29,10 @@ docker-compose up -d
 ## to Log into Phpmyadmin (127.0.0.1:8080) sever = maxscale , using
 maxuser: pwd = maxpwd
 
-## Check MaxScale server
-docker-compose exec maxscale maxctrl list servers
+o run maxctrl in the container to see the status of the cluster:
+```
+$ docker-compose exec maxscale maxctrl list servers
+
 
 ┌─────────┬───────────┬──────┬─────────────┬─────────────────┬───────────┐
 │ Server  │ Address   │ Port │ Connections │ State           │ GTID      │
@@ -61,6 +49,11 @@ docker-compose exec maxscale maxctrl list servers
 ├─────────┼───────────┼──────┼─────────────┼─────────────────┼───────────┤
 │ Shard-B │ 127.0.0.1 │ 4007 │ 0           │ Running         │           │
 └─────────┴───────────┴──────┴─────────────┴─────────────────┴───────────┘
+
+```
+
+
+
 
 ## To databases exis on maxscale/sql directory, you can execute:
 mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases" 
