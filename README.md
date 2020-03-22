@@ -132,8 +132,12 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 ## To access a master shard database from zipcode two:
    
  mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_two.zipcodes_two LIMIT 7;"
+ 
+ 
 
 # Give me output:
+
+```
 +---------+-------------+-------------+-------+--------------+-----------+------------+----------------------+---------------+-----------------+---------------------+------------+
 | Zipcode | ZipCodeType | City | State | LocationType | Coord_Lat | Coord_Long | Location | Decommisioned | TaxReturnsFiled | EstimatedPopulation | TotalWages |
 +---------+-------------+-------------+-------+--------------+-----------+------------+----------------------+---------------+-----------------+---------------------+------------+
@@ -144,6 +148,9 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 | 40023 | STANDARD | FISHERVILLE | KY | PRIMARY | 38.16 | -85.42 | NA-US-KY-FISHERVILLE | FALSE | 1884 | 3733 | 113020684 |
 | 41743 | PO BOX | FISTY | KY | PRIMARY | 37.33 | -83.1 | NA-US-KY-FISTY | FALSE | | | |
 | 41219 | STANDARD | FLATGAP | KY | PRIMARY | 37.93 | -82.88 | NA-US-KY-FLATGAP | FALSE | 708 | 1397 |
+
+
+```
 
 
 
