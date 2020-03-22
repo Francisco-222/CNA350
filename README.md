@@ -39,17 +39,11 @@ it will You should see 4 containers start up
 ```
 ## Second Step
 
-## Docker-compose setup and = maxscale docker images and verify 
-
-```
-$ docker-compose up -d
-```
-
 ## MaxScale docker-compose setup Moddify docker-compose.yml 
  Moddify docker-compose.yml and other files to suport PHPMyadmin and move the architecture from master-slave to shardded by modifying the .yml and maxscale.cnf files.
 
 [The MaxScale docker-compose setup](./docker-compose.yml) contains MaxScale
-configured with a three node master-slave cluster and . To start it, run the
+configured with a three node master-slave cluster and Shard-A and Shard-B . To start it, run the
 following commands in this directory.
 
 ```
@@ -97,7 +91,7 @@ $ docker-compose exec maxscale maxctrl list servers
 
 
 ## To databases exis on maxscale/sql directory, you can execute:
-mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases" 
+$ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases" 
 
 # It give you out results :
 
@@ -164,7 +158,6 @@ $ mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_two.
 
 ## Final Step
 ```
-
 Once complete, to remove the cluster and maxscale containers:
 
 ```
