@@ -43,11 +43,12 @@ Moddify docker-compose.yml and other files to suport PHPMyadmin and move the arc
 $ nano docker-compose.yml to add or change
 
 ```
+
 ## Docker-compose setup and = maxscale docker images and verify 
-```
+
 $ docker-compose up -d
 
-```
+
 
 ## to Log into Phpmyadmin (127.0.0.1:8080) sever = maxscale , using
 maxuser: pwd = maxpwd
