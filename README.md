@@ -1,6 +1,13 @@
-### MariaDB MaxScale Docker image and DatabaseShard
+## MariaDB MaxScale Docker image and DatabaseShard
+Some basic Git commands are:
+```
+git status
+git add
+git commit
+```
 
-## First Step you have  install commands at VM 
+
+st Step you have  install commands at VM 
 #sudo apt install docker
 
 #sudo apt install docker-compose
