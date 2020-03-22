@@ -1,6 +1,6 @@
 ## MariaDB MaxScale Docker image and DatabaseShard
 
-st Step you have  install commands at VM :
+Frist Step you have  install commands at VM :
 ```
 sudo apt install docker
 sudo apt install docker-compose
@@ -16,15 +16,16 @@ sudo apt install mariadb-server
 ## Make git the right directory
 ```
 $ Cd CNA350 cd maxscale
+
 ```
 
 ## Building
 
-```
 Run the following command in this directory to build the image.
 
 ```
 $ docker-compose up -d --build
+
 ```
 
 # To modifying and start 
