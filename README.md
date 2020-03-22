@@ -79,6 +79,7 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 ## To access a master shard database from zipcode one:
    mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_one.zipcodes_one LIMIT 7;"
    #  Out results 
+  ```
    
 +---------+-------------+----------+-------+--------------+-----------+------------+-------------------+---------------+-----------------+---------------------+------------+
 | Zipcode | ZipCodeType | City | State | LocationType | Coord_Lat | Coord_Long | Location | Decommisioned | TaxReturnsFiled | EstimatedPopulation | TotalWages |
@@ -91,6 +92,10 @@ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 | 631 | PO BOX | CASTANER | PR | PRIMARY | 18.19 | -66.82 | NA-US-PR-CASTANER | FALSE | | | |
 | 602 | STANDARD | AGUADA | PR | PRIMARY | 18.38 | -67.18 | NA-US-PR-AGUADA | FALSE | | | |
 +---------+-------------+----------+-------+--------------+-----------+------------+-------------------+---------------+-----------------+---------------------+------------+
+
+ ```
+
+
 
 ## To access a master shard database from zipcode two:
    
