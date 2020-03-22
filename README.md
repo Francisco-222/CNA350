@@ -7,7 +7,20 @@ sudo apt install docker-compose
 sudo apt install mariadb-server
 ```
 
+To run maxctrl in the container to see the status of the cluster:
+```
+$ docker-compose exec maxscale maxctrl list servers
+┌─────────┬─────────┬──────┬─────────────┬─────────────────┬──────────┐
+│ Server  │ Address │ Port │ Connections │ State           │ GTID     │
+├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
+│ server1 │ master  │ 3306 │ 0           │ Master, Running │ 0-3000-5 │
+├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
+│ server2 │ slave1  │ 3306 │ 0           │ Slave, Running  │ 0-3000-5 │
+├─────────┼─────────┼──────┼─────────────┼─────────────────┼──────────┤
+│ server3 │ slave2  │ 3306 │ 0           │ Running         │ 0-3000-5 │
+└─────────┴─────────┴──────┴─────────────┴─────────────────┴──────────┘
 
+```
 
 
 ## Fork maxscale repository: 
