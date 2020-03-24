@@ -2,8 +2,9 @@
 This Docker image runs the latest 2.4 version of MariaDB MaxScale.
 
 # Prerequisites
-Frist Step at VM you install Ubuntu and at You VM  :
+Frist Step at VM you install Ubuntu and your VM host at terminal:
 ```
+  run the fllow Command
 $ sudo apt install docker
 $ sudo apt install docker-compose
 $ sudo apt install mariadb-server
@@ -55,16 +56,13 @@ $ nano docker-compose.yml to add or change
 
 ## Configuration
 The default configuration for the container is fairly minimalist and can be found in [this configuration file](./maxscale.cnf). At a high level the following is enabled:
--  To  server(maxscale) user and password ( maxscale / maxpwd) listening to all hosts (127.0.0.1:8080) 
+-  To check at phpmyadmin login, server(maxscale) user and password ( maxscale / maxpwd) listening to all hosts (127.0.0.1:8080) 
 
 ## Check MaxScale server
 
 To run maxctrl in the container to see the status of the cluster:
 
 ```
-
-```
-
 
 ```
 $ docker-compose up –d 
@@ -111,13 +109,13 @@ $ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 ```
 
 
-## MySQL Query To access a master shard database from zipcode one:
+## MySQL Query To access a master shard database from zipcode one from to execute SQL query commands:
    $ mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_one.zipcodes_one LIMIT 7;"
    
    #  Out results 
   ```
    
-+---------+-------------+----------+-------+--------------+-----------+------------+-------------------+---------------+-----------------+---------------------+------------+
++---------+-------------+----------+-------+--------------+-----------+------------+-------------- -----+---------------+-----------------+---------------------+------------+
 | Zipcode | ZipCodeType | City     | State | LocationType | Coord_Lat | Coord_Long | Location   | Decommisioned | TaxReturnsFiled | EstimatedPopulation | TotalWages   |
 +---------+-------------+----------+-------+--------------+-----------+------------+-------------------+---------------+-----------------+---------------------+------------+
 | 705     | STANDARD    | AIBONITO | PR    | PRIMARY      | 18.14     | -66.26     | NA-US-PR-AIBONITO | FALSE | | | |
@@ -133,7 +131,7 @@ $ mysql -umaxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "show databases"
 
 
 
-## To access a master shard database from zipcode two:
+## To access a master shard database from zipcode two from to execute SQL query commands:
    
 $ mysql -u maxuser -pmaxpwd -h 127.0.0.1 -P 3306 -e "SELECT * FROM zipcodes_two.zipcodes_two LIMIT 7;"
  
