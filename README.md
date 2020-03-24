@@ -63,6 +63,7 @@ The default configuration for the container is fairly minimalist and can be foun
 To run maxctrl in the container to see the status of the cluster:
 
 ```
+```
 
 ```
 $ docker-compose up –d 
